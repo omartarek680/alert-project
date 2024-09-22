@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Ban, BookAIcon } from "lucide-react";
+import { BellRing } from 'lucide-react';
+import { NotepadText } from 'lucide-react';
+import { CircleAlert } from 'lucide-react';
+
+import "./App.css";
+import Alert from "./components/ui/Alert/Alert";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="app">
+      <Alert
+        type={"alert-default"}
+        icon={<BellRing size={20} />}
+        title={"Upgrade Your Plan"}
+      >
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste maxime
+        modi ipsam animi, incidunt expedita recusandae aut! Fugiat, iusto alias.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   
+      </Alert>
+      <Alert
+        type={"alert-error"}
+        icon={<Ban size={20} />}
+        title={"Something Went Wrong"}
+        description={
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandaedicta dolorem quisquam perspiciatis saepe blanditiis porro numquam, essenecessitatibus et."
+        }
+      />
+      <Alert
+        type={"alert-info"}
+        icon={<NotepadText size={20} />}
+        title={"Note"}
+        description={
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandaedicta dolorem quisquam perspiciatis saepe blanditiis porro numquam, essenecessitatibus et."
+        }
+      />
+      <Alert
+        type={"alert-success"}
+        icon={<BookAIcon size={20} />}
+        title={"Success"}
+        description={
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandaedicta dolorem quisquam perspiciatis saepe blanditiis porro numquam, essenecessitatibus et."
+        }
+      />
+      <Alert
+        type={"alert-warning"}
+        icon={<CircleAlert size={20} />}
+        title={"Tips & Tricks"}
+        description={
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandaedicta dolorem quisquam perspiciatis saepe blanditiis porro numquam, essenecessitatibus et."
+        }
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
